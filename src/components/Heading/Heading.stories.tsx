@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyles } from '../../styles/globalStyles';
+import { GlobalStyles } from '../../styles/global-styles';
 import { theme } from '../../styles/theme';
 import { Heading, HeadingProps } from '.';
 
@@ -9,19 +9,14 @@ export default {
   title: 'Heading',
   component: Heading,
   args: {
-    children: 'não sei ainda',
+    children: 'o texto está escuro',
   },
   parameters: {
     backgrounds: {
+      default: 'dark',
       values: [
-        {
-          name: 'light',
-          value: theme.colors.white,
-        },
-        {
-          name: 'dark',
-          value: theme.colors.primaryColor,
-        },
+        { name: 'light', value: theme.colors.white },
+        { name: 'dark', value: theme.colors.primaryColor },
       ],
     },
   },
@@ -37,4 +32,20 @@ export default {
   ],
 } as Meta<HeadingProps>;
 
-export const Template: StoryObj<HeadingProps> = {};
+export const Light: StoryObj<HeadingProps> = {
+  args: {
+    light: false,
+  },
+  parameters: {
+    backgrounds: {
+      default: 'light',
+    },
+  },
+};
+
+export const Dark: StoryObj<HeadingProps> = {
+  args: {
+    children: 'o texto está claro',
+    light: true,
+  },
+};
