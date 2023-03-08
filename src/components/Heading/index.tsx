@@ -3,8 +3,9 @@ import * as Styled from './styles';
 
 export interface HeadingProps {
   children: ReactNode;
+  light: boolean;
 }
 
-export function Heading({ children }: HeadingProps) {
-  return <Styled.Title>{children}</Styled.Title>;
+export function Heading({ children, light }: HeadingProps) {
+  return <Styled.Title light={light}>{children}</Styled.Title>;
 }

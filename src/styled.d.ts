@@ -7,5 +7,11 @@ declare module 'styled-components' {
       secondaryBg: string;
       white: string;
     };
+    font: {
+      family: {
+        default: string;
+        secondary: string;
+      };
+    };
   }
 }

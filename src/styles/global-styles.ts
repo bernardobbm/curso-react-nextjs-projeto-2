@@ -8,10 +8,10 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: ${({ theme }) => theme.font.family.default};
   }
 
   h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: ${({ theme }) => theme.font.family.secondary};
   }
 `;
