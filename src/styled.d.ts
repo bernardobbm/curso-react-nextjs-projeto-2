@@ -12,6 +12,16 @@ declare module 'styled-components' {
         default: string;
         secondary: string;
       };
+      size: {
+        xsmall: string;
+        small: string;
+        medium: string;
+        large: string;
+        xlarge: string;
+        xxlarge: string;
+        huge: string;
+        xhuge: string;
+      };
     };
   }
 }

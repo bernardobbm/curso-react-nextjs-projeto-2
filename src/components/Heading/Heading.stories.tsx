@@ -34,7 +34,7 @@ export default {
 
 export const Light: StoryObj<HeadingProps> = {
   args: {
-    light: false,
+    colorDark: true,
   },
   parameters: {
     backgrounds: {
@@ -46,6 +46,6 @@ export const Light: StoryObj<HeadingProps> = {
 export const Dark: StoryObj<HeadingProps> = {
   args: {
     children: 'o texto está claro',
-    light: true,
+    colorDark: false,
   },
 };
