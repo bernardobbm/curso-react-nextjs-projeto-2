@@ -23,5 +23,8 @@ declare module 'styled-components' {
         xhuge: string;
       };
     };
+    media: {
+      lteMedium: string;
+    };
   }
 }

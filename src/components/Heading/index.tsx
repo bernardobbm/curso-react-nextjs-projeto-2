@@ -15,7 +15,7 @@ export interface HeadingProps {
 export function Heading({
   children,
   colorDark = false,
-  size = 'big',
+  size = 'huge',
   as = 'h1',
   uppercase = false,
 }: HeadingProps) {

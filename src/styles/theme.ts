@@ -22,4 +22,7 @@ export const theme: DefaultTheme = {
       xhuge: '4rem',
     },
   },
+  media: {
+    lteMedium: '(max-width: 768px)',
+  },
 };
