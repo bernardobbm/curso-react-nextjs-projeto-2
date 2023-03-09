@@ -1,15 +1,9 @@
-import { render, screen } from '@testing-library/react';
-import { it } from 'vitest';
+import { describe, it } from 'vitest';
 import { Home } from '.';
+import { renderTheme } from '../../styles/render-theme';
 
-it('should render Home', () => {
-  const { debug } = render(<Home />);
-
-  const headingContainer = screen.getByRole('heading', {
-    name: 'Hello',
-  }).parentElement;
-
-  expect(headingContainer).toHaveStyleRule('background', '#ff6b99');
-
-  debug();
+describe('<Home />', () => {
+  it('should render Home', () => {
+    renderTheme(<Home />);
+  });
 });

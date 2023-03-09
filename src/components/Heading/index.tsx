@@ -6,15 +6,15 @@ type HeadingSizes = 'small' | 'medium' | 'big' | 'huge';
 
 export interface HeadingProps {
   children: ReactNode;
-  colorDark: boolean;
-  size: HeadingSizes;
-  as: HeadingsType;
-  uppercase: boolean;
+  colorDark?: boolean;
+  size?: HeadingSizes;
+  as?: HeadingsType;
+  uppercase?: boolean;
 }
 
 export function Heading({
   children,
-  colorDark = false,
+  colorDark = true,
   size = 'huge',
   as = 'h1',
   uppercase = false,
