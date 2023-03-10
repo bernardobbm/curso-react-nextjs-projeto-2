@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Heading /> > should match to snapshot 1`] = `
+.c0 {
+  color: #0a1128;
+  font-size: 4rem;
+  text-transform: none;
+}
+
+@media (max-width:768px) {
+  .c0 {
+    font-size: 2.5rem;
+  }
+}
+
+<h1
+  class="c0"
+>
+  texto
+</h1>
+`;
