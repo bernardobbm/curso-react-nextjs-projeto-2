@@ -28,8 +28,8 @@ describe('<MenuLink />', () => {
   });
 
   it('should match to snapshot', () => {
-    renderTheme(<MenuLink link="">link</MenuLink>);
+    const { container } = renderTheme(<MenuLink link="">link</MenuLink>);
 
-    expect(screen.getByRole('link', { name: 'link' })).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

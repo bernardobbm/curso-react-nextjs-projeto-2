@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../../styles/global-styles';
 import { theme } from '../../styles/theme';
-import { TextComponent } from '.';
+import { TextComponent, TextComponentProps } from '.';
 
 export default {
   title: 'TextComponent',
@@ -29,6 +29,6 @@ export default {
       );
     },
   ],
-} as Meta;
+} as Meta<TextComponentProps>;
 
-export const Default: StoryObj = {};
+export const Default: StoryObj<TextComponentProps> = {};

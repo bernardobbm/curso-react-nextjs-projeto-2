@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import * as Styled from './styles';
 
-interface TextComponentProps {
+export interface TextComponentProps {
   children: ReactNode;
 }
 
