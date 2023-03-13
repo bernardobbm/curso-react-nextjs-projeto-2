@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { describe, it } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { LogoLink } from '.';
 import { renderTheme } from '../../styles/render-theme';
 

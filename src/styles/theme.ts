@@ -5,6 +5,7 @@ export const theme: DefaultTheme = {
     primaryColor: '#0a1128',
     secondaryBg: '#dc143c',
     white: '#fff',
+    mediumGray: '#ddd',
   },
   font: {
     family: {

@@ -7,7 +7,7 @@ export interface NavLinksProps {
 
 export function NavLinks({ links = [] }: NavLinksProps) {
   return (
-    <Styled.Container>
+    <Styled.Container aria-label="Main menu">
       {links.map((link) => {
         return <MenuLink key={link.link} {...link}></MenuLink>;
       })}

@@ -6,6 +6,7 @@ declare module 'styled-components' {
       primaryColor: string;
       secondaryBg: string;
       white: string;
+      mediumGray: string;
     };
     font: {
       family: {
