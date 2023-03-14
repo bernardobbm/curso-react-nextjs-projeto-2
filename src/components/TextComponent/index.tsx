@@ -1,10 +1,9 @@
-import { ReactNode } from 'react';
 import * as Styled from './styles';
 
 export interface TextComponentProps {
-  children: ReactNode;
+  children: string;
 }
 
 export function TextComponent({ children }: TextComponentProps) {
-  return <Styled.Container>{children}</Styled.Container>;
+  return <Styled.Container dangerouslySetInnerHTML={{ __html: children }} />;
 }
