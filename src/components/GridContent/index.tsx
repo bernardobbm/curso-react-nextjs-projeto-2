@@ -13,7 +13,7 @@ export function GridContent({ title, html, background }: GridContentProps) {
   return (
     <SectionBackground background={background}>
       <Styled.Container>
-        <Heading uppercase colorDark={!background}>
+        <Heading as="h2" uppercase colorDark={!background}>
           {title}
         </Heading>
 

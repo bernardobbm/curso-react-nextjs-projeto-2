@@ -1,5 +1,12 @@
 import styled, { css, DefaultTheme } from 'styled-components';
-import { HeadingProps } from '.';
+import { HeadingSizes, HeadingsType } from '.';
+
+export interface HeadingTitleProps {
+  colorDark: boolean;
+  size: HeadingSizes;
+  as: HeadingsType;
+  uppercase: boolean;
+}
 
 const titleSize = {
   small: (theme: DefaultTheme) => css`
@@ -28,9 +35,9 @@ const titleCase = (uppercase: boolean) => css`
   text-transform: ${uppercase ? 'uppercase' : 'none'};
 `;
 
-export const Title = styled.h1.attrs<HeadingProps>(
+export const Title = styled.h1.attrs<HeadingTitleProps>(
   ({ as }) => as,
-)<HeadingProps>`
+)<HeadingTitleProps>`
   ${({ theme, colorDark, size, uppercase }) => css`
     color: ${colorDark ? theme.colors.primaryColor : theme.colors.white};
     ${titleSize[size](theme)}

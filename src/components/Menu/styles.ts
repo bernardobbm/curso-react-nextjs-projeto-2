@@ -1,13 +1,13 @@
-import styled, { css, DefaultTheme } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Container as SectionContainerStyle } from '../SectionContainer/styles';
-import { Title as HeadingStyle } from '../Heading/styles';
+import { Title as HeadingTitleStyle } from '../Heading/styles';
 
 interface StyleProps {
   visible: boolean;
 }
 
-function menuVisible(theme: DefaultTheme) {
+function menuVisible() {
   return css`
     visibility: visible;
     opacity: 1;
@@ -31,7 +31,7 @@ export const Container = styled.div<StyleProps>`
       padding-bottom: 0;
     }
 
-    & ${HeadingStyle} {
+    & ${HeadingTitleStyle} {
       margin-top: 0;
       margin-bottom: 0;
     }
@@ -41,7 +41,7 @@ export const Container = styled.div<StyleProps>`
       visibility: hidden;
       opacity: 0;
 
-      ${visible && menuVisible(theme)}
+      ${visible && menuVisible()}
 
       & ${SectionContainerStyle} {
         display: grid;
@@ -52,7 +52,7 @@ export const Container = styled.div<StyleProps>`
         overflow-y: auto;
       }
 
-      ${HeadingStyle} {
+      ${HeadingTitleStyle} {
         padding-bottom: ${theme.spacing.xxlarge};
         display: flex;
         justify-content: center;

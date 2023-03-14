@@ -20,7 +20,7 @@ export function GridTwoColumns({
     <SectionBackground background={background}>
       <Styled.Container>
         <Styled.TextContainer>
-          <Heading uppercase colorDark={!background}>
+          <Heading as="h2" uppercase colorDark={!background}>
             {title}
           </Heading>
           <TextComponent>{text}</TextComponent>

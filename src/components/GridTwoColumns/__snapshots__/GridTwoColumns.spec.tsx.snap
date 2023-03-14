@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<GridTwoColumns /> > should render two column grid 1`] = `
+exports[`<GridTwoColumns /> > should match to snapshot 1`] = `
 .c5 {
   color: #0a1128;
   font-size: 4rem;
@@ -77,11 +77,11 @@ exports[`<GridTwoColumns /> > should render two column grid 1`] = `
         <div
           class="c3"
         >
-          <h1
+          <h2
             class="c4 c5"
           >
             Grid two columns
-          </h1>
+          </h2>
           <p
             class="c6"
           >

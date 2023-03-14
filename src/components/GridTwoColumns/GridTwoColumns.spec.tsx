@@ -5,7 +5,7 @@ import { renderTheme } from '../../styles/render-theme';
 import mockArgs from './mock';
 
 describe('<GridTwoColumns />', () => {
-  it('should render two column grid', () => {
+  it('should match to snapshot', () => {
     const { container } = renderTheme(
       <GridTwoColumns background={false} {...mockArgs} />,
     );
