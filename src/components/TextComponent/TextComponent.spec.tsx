@@ -19,11 +19,11 @@ describe('<TextComponent />', () => {
         font-size: 1.5rem;
       }
 
-      <p
+      <div
         class="c0"
       >
         children
-      </p>
+      </div>
     `);
   });
 });

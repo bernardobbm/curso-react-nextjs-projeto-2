@@ -78,12 +78,12 @@ exports[`<GridImage /> > should match snapshot 1`] = `
         >
           My Grid
         </h2>
-        <p
+        <div
           class="c4 c5"
         >
           Atque doloribus nobis laudantium esse et,
   non commodi maxime distincio veritatis unde
-        </p>
+        </div>
         <div
           class="c6"
         >
