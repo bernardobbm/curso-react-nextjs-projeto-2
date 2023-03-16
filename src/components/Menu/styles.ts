@@ -21,7 +21,6 @@ export const Container = styled.div<StyleProps>`
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
     border-bottom: ${theme.colors.mediumGray};
     background-color: ${theme.colors.white};
     transition: all 0.3s ease-in-out;
