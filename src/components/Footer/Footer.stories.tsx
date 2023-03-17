@@ -9,7 +9,7 @@ export default {
   title: 'Footer',
   component: Footer,
   args: {
-    html: '<p><a href="#">Feito com ❤ por Bernamassa</a></p>',
+    footerHtml: '<p><a href="#">Feito com ❤ por Bernamassa</a></p>',
   },
   parameters: {
     backgrounds: {

@@ -3,14 +3,14 @@ import { TextComponent } from '../TextComponent';
 import * as Styled from './styles';
 
 export interface FooterProps {
-  html: string;
+  footerHtml: string;
 }
 
-export function Footer({ html }: FooterProps) {
+export function Footer({ footerHtml }: FooterProps) {
   return (
     <Styled.Container>
       <SectionContainer>
-        <TextComponent>{html}</TextComponent>
+        <TextComponent>{footerHtml}</TextComponent>
       </SectionContainer>
     </Styled.Container>
   );
