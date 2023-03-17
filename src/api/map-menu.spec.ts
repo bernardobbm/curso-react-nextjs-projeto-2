@@ -23,13 +23,11 @@ describe('map-menu', () => {
       },
       menu_links: [
         {
-          id: 1,
           link_text: 'intro',
           url: '#intro',
           open_in_new_tab: false,
         },
         {
-          id: 2,
           link_text: 'grid-one',
           url: '#grid-one',
           open_in_new_tab: false,

@@ -1,9 +1,9 @@
 type PagesDataProps = Array<{
-  footer_text: string;
-  slug: string;
-  title: string;
-  sections: object[];
-  menu: object;
+  footer_text?: string;
+  slug?: string;
+  title?: string;
+  sections?: object[];
+  menu?: object;
 }>;
 
 export function mapData(
