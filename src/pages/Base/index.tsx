@@ -25,7 +25,7 @@ export function Base({
       <Menu logoData={logoData} links={links} />
       <Styled.Container>
         {children}
-        <Footer html={footerHtml} />
+        <Footer footerHtml={footerHtml} />
       </Styled.Container>
       <GoTop />
     </>

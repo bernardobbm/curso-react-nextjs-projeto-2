@@ -28,7 +28,16 @@ export interface SectionGrid extends SectionDefault {
     title?: string;
     description?: string;
   }>;
-  image_grid?: Array<unknown>;
+  image_grid?: Array<{
+    image: {
+      data: Array<{
+        attributes: {
+          alternativeText?: string | null;
+          url?: string;
+        };
+      }>;
+    };
+  }>;
 }
 
 export type Sections = SectionTwoColumns | SectionContent | SectionGrid;

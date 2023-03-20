@@ -1,11 +1,34 @@
 import { describe, expect, it } from 'vitest';
 import {
+  mapImageGrid,
   mapSectionContent,
+  mapSections,
   mapSectionTwoColumns,
   mapTextGrid,
 } from './map-sections';
 
+import pagesFakeData from './data.json';
+import pagesFakeDataWithoutTextGrid from './dataWithoutTextGrid.json';
+
 describe('map-sections', () => {
+  it('should render a predefined section if no data', () => {
+    const data = mapSections();
+
+    expect(data).toEqual([]);
+  });
+
+  it('should render sections with correct data', () => {
+    const data = mapSections(pagesFakeData.data[0].attributes.sections);
+    const dataWithoutTextGrid = mapSections(
+      pagesFakeDataWithoutTextGrid.data[0].attributes.sections,
+    );
+
+    expect(data[0]?.component).toBe('section.sections-two-columns');
+    expect(dataWithoutTextGrid[0]?.component).toBe(
+      'section.sections-two-columns',
+    );
+  });
+
   it('should map section two columns and return a predefined object if have no data', () => {
     const data = mapSectionTwoColumns();
 
@@ -100,7 +123,7 @@ describe('map-sections', () => {
     });
 
     expect(data.background).toBe(true);
-    expect(data.component).toBe('section.section-grid');
+    expect(data.component).toBe('section.section-text-grid');
     expect(data.description).toBe('Uma breve descrição.\n\n');
     expect(data.title).toBe('MY GRID');
     expect(data.sectionId).toBe('grid-one');
@@ -112,11 +135,56 @@ describe('map-sections', () => {
     const data = mapTextGrid();
 
     expect(data.background).toBe(false);
-    expect(data.component).toBe('');
+    expect(data.component).toBe('section.section-text-grid');
     expect(data.description).toBe('');
     expect(data.title).toBe('');
     expect(data.sectionId).toBe('');
     expect(data.grid[0].title).toBe('');
     expect(data.grid[0].description).toBe('');
+  });
+
+  it('should map grid image and return a predefined object if have no data', () => {
+    const data = mapImageGrid();
+
+    expect(data.background).toBe(false);
+    expect(data.component).toBe('section.section-image-grid');
+    expect(data.description).toBe('');
+    expect(data.title).toBe('');
+    expect(data.sectionId).toBe('');
+    expect(data.grid).toEqual([]);
+  });
+
+  it('should map grid image with the correct values', () => {
+    const data = mapImageGrid({
+      __component: 'section.section-grid',
+      title: 'MY GRID',
+      description: 'Uma breve descrição.\n\n',
+      metadata: {
+        section_id: 'grid-one',
+        background: true,
+      },
+      image_grid: [
+        {
+          image: {
+            data: [
+              {
+                attributes: {
+                  alternativeText: 'alternative text',
+                  url: 'image.svg',
+                },
+              },
+            ],
+          },
+        },
+      ],
+    });
+
+    expect(data.background).toBe(true);
+    expect(data.component).toBe('section.section-image-grid');
+    expect(data.description).toBe('Uma breve descrição.\n\n');
+    expect(data.title).toBe('MY GRID');
+    expect(data.sectionId).toBe('grid-one');
+    expect(data.grid[0].altText).toBe('alternative text');
+    expect(data.grid[0].imageSrc).toBe('image.svg');
   });
 });
