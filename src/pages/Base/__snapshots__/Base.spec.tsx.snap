@@ -250,13 +250,13 @@ exports[`<Base /> > should render 1`] = `
   left: 3.125rem;
 }
 
-.c18 .c6:before {
+.c18 .c6::before {
   counter-increment: grid-counter;
   content: counter(grid-counter);
   position: absolute;
   font-size: 4.5rem;
   top: -2rem;
-  left: -3.8rem;
+  left: -3.2rem;
   -webkit-transform: rotate(8deg);
   -ms-transform: rotate(8deg);
   transform: rotate(8deg);

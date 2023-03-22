@@ -15,7 +15,7 @@ export type PagesDataProps = {
   }>;
 };
 
-export function mapData({ data: pagesData }: PagesDataProps) {
+export function mapData({ data: pagesData = [] }: PagesDataProps) {
   return pagesData?.map(({ attributes: data }) => {
     const {
       footer_text: footerHtml = '',
