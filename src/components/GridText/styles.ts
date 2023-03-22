@@ -33,13 +33,13 @@ export const GridElement = styled.div`
       left: 3.125rem;
     }
 
-    ${HeadingTitleStyle}:before {
+    ${HeadingTitleStyle}::before {
       counter-increment: grid-counter;
       content: counter(grid-counter);
       position: absolute;
       font-size: 4.5rem;
       top: -2rem;
-      left: -3.8rem;
+      left: -3.2rem;
       transform: rotate(8deg);
     }
   `}

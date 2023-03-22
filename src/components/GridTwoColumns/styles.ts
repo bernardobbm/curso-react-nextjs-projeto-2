@@ -29,9 +29,9 @@ export const TextContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  ${({ theme }) => css``}
+  ${() => css``}
 `;
 
 export const Image = styled.img`
-  ${({ theme }) => css``}
+  ${() => css``}
 `;
