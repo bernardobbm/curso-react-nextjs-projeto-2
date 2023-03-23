@@ -1,0 +1,90 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<PageNotFound /> > should match snapshot 1`] = `
+.c3 {
+  color: #fff;
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+.c0 {
+  background-color: #fff;
+  color: #0a1128;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #0a1128;
+  color: #fff;
+}
+
+.c1 {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+.c5 {
+  font-size: 1.5rem;
+}
+
+.c2 {
+  text-align: center;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.c4 {
+  margin: 2rem 0;
+}
+
+@media (max-width:768px) {
+  .c3 {
+    font-size: 2.5rem;
+  }
+}
+
+<div
+  class="c0"
+  id=""
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <h2
+        class="c3"
+      >
+        Error 404
+      </h2>
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+        >
+          <p>
+            A página que você está buscando não foi encontrada
+          </p>
+          <br />
+          
+        
+          <a
+            href="/"
+          >
+            Clique aqui para voltar
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

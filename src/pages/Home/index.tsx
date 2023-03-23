@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import qs from 'qs';
+import { useLocation } from 'react-router-dom';
 import {
   MapSectionContentType,
   MapSectionImageGridType,
@@ -15,7 +16,6 @@ import { Loading } from '../Loading';
 import { PageNotFound } from '../PageNotFound';
 import { GridText } from '../../components/GridText';
 import { GridImage } from '../../components/GridImage';
-import { useLocation } from 'react-router-dom';
 
 type DataType = ReturnType<typeof mapData>[0];
 
