@@ -16,6 +16,7 @@ import { Loading } from '../Loading';
 import { PageNotFound } from '../PageNotFound';
 import { GridText } from '../../components/GridText';
 import { GridImage } from '../../components/GridImage';
+import config from '../../config';
 
 type DataType = ReturnType<typeof mapData>[0];
 
@@ -26,22 +27,12 @@ export function Home() {
   useEffect(() => {
     async function loadDataFromApi() {
       const pathName = location.pathname.replace(/[^a-z0-9-_]/gi, '');
-      const slug = pathName ? pathName : 'landing-page';
+      const slug = pathName ? pathName : config.defaultSlug;
 
       const query = qs.stringify(
         {
           filters: { slug: slug },
-          populate: [
-            'menu',
-            'menu.logo',
-            'menu.menu_link',
-            'sections',
-            'sections.image',
-            'sections.image_grid',
-            'sections.image_grid.image',
-            'sections.text_grid',
-            'sections.metadata',
-          ],
+          populate: ['deep'],
         },
         { encodeValuesOnly: true },
       );
@@ -60,6 +51,20 @@ export function Home() {
 
     loadDataFromApi();
   }, [location]);
+
+  useEffect(() => {
+    if (data && !data?.slug) {
+      document.title = `Carregando... | ${config.siteName}`;
+    }
+
+    if (data === undefined) {
+      document.title = `Página não encontrada | ${config.siteName}`;
+    }
+
+    if (data && data?.title) {
+      document.title = `${data.title}  | ${config.siteName}`;
+    }
+  }, [data]);
 
   if (data && !data?.slug) return <Loading />;
 
