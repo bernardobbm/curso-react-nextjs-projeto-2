@@ -1,7 +1,13 @@
 import { useEffect, useState } from 'react';
+import {
+  MapSectionContentType,
+  MapSectionTwoColumnsType,
+} from '../../api/map-sections';
+
 import { mapData } from '../../api/map-data';
+import { GridContent } from '../../components/GridContent';
+import { GridTwoColumns } from '../../components/GridTwoColumns';
 import { Base } from '../Base';
-import { mockBase } from '../Base/mock';
 import { Loading } from '../Loading';
 import { PageNotFound } from '../PageNotFound';
 
@@ -33,5 +39,43 @@ export function Home() {
 
   if (data === undefined) return <PageNotFound />;
 
-  return <Base {...mockBase} />;
+  const {
+    menu: { link, links, text, imageSrc },
+    sections,
+    footerHtml,
+    slug,
+  } = data;
+
+  return (
+    <Base
+      links={links}
+      footerHtml={footerHtml}
+      logoData={{ link, text, imageSrc }}
+    >
+      {sections.map((section, index) => {
+        if (!section) return <PageNotFound key="Error404" />;
+
+        const { component } = section;
+        const componentKey = `${slug}-${index}`;
+
+        if (component === 'section.sections-two-columns') {
+          return (
+            <GridTwoColumns
+              key={componentKey}
+              {...(section as MapSectionTwoColumnsType)}
+            />
+          );
+        }
+
+        if (component === 'section.section-content') {
+          return (
+            <GridContent
+              key={componentKey}
+              {...(section as MapSectionContentType)}
+            />
+          );
+        }
+      })}
+    </Base>
+  );
 }
