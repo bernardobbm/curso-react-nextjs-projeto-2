@@ -23,13 +23,9 @@ export function mapSections(sections: Sections[] = []) {
     if (section.__component === 'section.section-grid') {
       const { text_grid = [], image_grid = [] } = section as SectionGrid;
 
-      if (text_grid.length > 0) {
-        return mapTextGrid(section);
-      }
+      if (text_grid.length > 0) return mapTextGrid(section);
 
-      if (image_grid.length > 0) {
-        return mapImageGrid(section);
-      }
+      if (image_grid.length > 0) return mapImageGrid(section);
     }
   });
 }
@@ -85,7 +81,7 @@ export function mapTextGrid(section: SectionGrid = {}) {
     background,
     sectionId,
     grid: grid.map((text) => {
-      const { title, description } = text;
+      const { title = '', description = '' } = text;
 
       return {
         title,

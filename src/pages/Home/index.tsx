@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import {
   MapSectionContentType,
+  MapSectionImageGridType,
+  MapSectionTextGridType,
   MapSectionTwoColumnsType,
 } from '../../api/map-sections';
 
@@ -10,6 +12,8 @@ import { GridTwoColumns } from '../../components/GridTwoColumns';
 import { Base } from '../Base';
 import { Loading } from '../Loading';
 import { PageNotFound } from '../PageNotFound';
+import { GridText } from '../../components/GridText';
+import { GridImage } from '../../components/GridImage';
 
 type DataType = ReturnType<typeof mapData>[0];
 
@@ -72,6 +76,24 @@ export function Home() {
             <GridContent
               key={componentKey}
               {...(section as MapSectionContentType)}
+            />
+          );
+        }
+
+        if (component === 'section.section-text-grid') {
+          return (
+            <GridText
+              key={componentKey}
+              {...(section as MapSectionTextGridType)}
+            />
+          );
+        }
+
+        if (component === 'section.section-image-grid') {
+          return (
+            <GridImage
+              key={componentKey}
+              {...(section as MapSectionImageGridType)}
             />
           );
         }

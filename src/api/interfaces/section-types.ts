@@ -32,7 +32,7 @@ export interface SectionGrid extends SectionDefault {
     image: {
       data: Array<{
         attributes: {
-          alternativeText?: string | null;
+          alternativeText?: string;
           url?: string;
         };
       }>;
