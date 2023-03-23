@@ -5,6 +5,11 @@ import {
   SectionTwoColumns,
 } from './interfaces/section-types';
 
+export type MapSectionTwoColumnsType = ReturnType<typeof mapSectionTwoColumns>;
+export type MapSectionContentType = ReturnType<typeof mapSectionContent>;
+export type MapSectionImageGridType = ReturnType<typeof mapImageGrid>;
+export type MapSectionTextGridType = ReturnType<typeof mapTextGrid>;
+
 export function mapSections(sections: Sections[] = []) {
   return sections.map((section) => {
     if (section.__component === 'section.sections-two-columns') {
@@ -34,7 +39,7 @@ export function mapSectionTwoColumns(section: SectionTwoColumns = {}) {
     __component: component = '',
     title = '',
     description: text = '',
-    image: { data: { attributes: { url: imageUrl = '' } = {} } = {} } = {},
+    image: { data: { attributes: { url: imageSrc = '' } = {} } = {} } = {},
     metadata: { background = false, section_id: sectionId = '' } = {},
   } = section;
 
@@ -42,7 +47,7 @@ export function mapSectionTwoColumns(section: SectionTwoColumns = {}) {
     component,
     title,
     text,
-    imageUrl,
+    imageSrc,
     background,
     sectionId,
   };
