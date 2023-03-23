@@ -8,6 +8,7 @@ export interface GridImageProps {
   description: string;
   background?: boolean;
   grid: Array<{ altText: string; imageSrc: string }>;
+  sectionId?: string;
 }
 
 export function GridImage({
@@ -15,9 +16,10 @@ export function GridImage({
   description,
   grid,
   background = false,
+  sectionId = '',
 }: GridImageProps) {
   return (
-    <SectionBackground background={background}>
+    <SectionBackground background={background} sectionId={sectionId}>
       <Styled.Container>
         <Heading as="h2" size="huge" uppercase colorDark={!background}>
           {title}

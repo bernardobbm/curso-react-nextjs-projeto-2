@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import qs from 'qs';
 import {
   MapSectionContentType,
   MapSectionImageGridType,
@@ -14,18 +15,39 @@ import { Loading } from '../Loading';
 import { PageNotFound } from '../PageNotFound';
 import { GridText } from '../../components/GridText';
 import { GridImage } from '../../components/GridImage';
+import { useLocation } from 'react-router-dom';
 
 type DataType = ReturnType<typeof mapData>[0];
 
 export function Home() {
   const [data, setData] = useState<DataType | undefined>({} as DataType);
+  const location = useLocation();
 
   useEffect(() => {
     async function loadDataFromApi() {
+      const pathName = location.pathname.replace(/[^a-z0-9-_]/gi, '');
+      const slug = pathName ? pathName : 'landing-page';
+
+      const query = qs.stringify(
+        {
+          filters: { slug: slug },
+          populate: [
+            'menu',
+            'menu.logo',
+            'menu.menu_link',
+            'sections',
+            'sections.image',
+            'sections.image_grid',
+            'sections.image_grid.image',
+            'sections.text_grid',
+            'sections.metadata',
+          ],
+        },
+        { encodeValuesOnly: true },
+      );
+
       try {
-        const data = await fetch(
-          'http://localhost:1337/api/pages?populate=deep',
-        );
+        const data = await fetch(`http://localhost:1337/api/pages?${query}`);
         const dataJson = await data.json();
 
         const pageData = mapData(dataJson)[0];
@@ -37,7 +59,7 @@ export function Home() {
     }
 
     loadDataFromApi();
-  }, []);
+  }, [location]);
 
   if (data && !data?.slug) return <Loading />;
 

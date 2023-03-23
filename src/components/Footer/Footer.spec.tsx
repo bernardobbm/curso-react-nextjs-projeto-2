@@ -16,6 +16,7 @@ describe('<Footer />', () => {
         max-width: 75rem;
         margin: 0 auto;
         padding: 2rem;
+        width: 100%;
       }
 
       .c4 {
@@ -25,6 +26,7 @@ describe('<Footer />', () => {
       .c0 {
         text-align: center;
         border-top: 0.0625rem solid #ddd;
+        padding: 12px;
       }
 
       .c0 a {

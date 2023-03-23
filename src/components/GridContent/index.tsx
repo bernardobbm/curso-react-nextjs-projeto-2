@@ -7,11 +7,17 @@ export interface GridContentProps {
   title: string;
   html: string;
   background: boolean;
+  sectionId?: string;
 }
 
-export function GridContent({ title, html, background }: GridContentProps) {
+export function GridContent({
+  title,
+  html,
+  background,
+  sectionId = '',
+}: GridContentProps) {
   return (
-    <SectionBackground background={background}>
+    <SectionBackground background={background} sectionId={sectionId}>
       <Styled.Container>
         <Heading as="h2" uppercase colorDark={!background}>
           {title}

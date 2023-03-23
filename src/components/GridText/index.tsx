@@ -8,6 +8,7 @@ export interface GridTextProps {
   description: string;
   grid: Array<{ title: string; description: string }>;
   background?: boolean;
+  sectionId?: string;
 }
 
 export function GridText({
@@ -15,9 +16,10 @@ export function GridText({
   description,
   background = false,
   grid,
+  sectionId = '',
 }: GridTextProps) {
   return (
-    <SectionBackground background={background}>
+    <SectionBackground background={background} sectionId={sectionId}>
       <Styled.Container>
         <Heading as="h2" size="huge" uppercase colorDark={!background}>
           {title}

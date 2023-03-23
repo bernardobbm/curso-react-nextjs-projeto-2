@@ -35,7 +35,7 @@ describe('map-sections', () => {
     expect(data.background).toBe(false);
     expect(data.component).toBe('');
     expect(data.sectionId).toBe('');
-    expect(data.imageUrl).toBe('');
+    expect(data.imageSrc).toBe('');
     expect(data.text).toBe('');
     expect(data.title).toBe('');
   });
@@ -61,7 +61,7 @@ describe('map-sections', () => {
     expect(data.background).toBe(true);
     expect(data.component).toBe('section.sections-two-columns');
     expect(data.sectionId).toBe('home');
-    expect(data.imageUrl).toBe('test_image.svg');
+    expect(data.imageSrc).toBe('test_image.svg');
     expect(data.text).toBe('this is the description/text');
     expect(data.title).toBe('JANUARY BRINGS US FIREFOX 85');
   });
